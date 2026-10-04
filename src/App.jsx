@@ -3,6 +3,7 @@ import AboutSection from './components/sections/AboutSection'
 import AcademicsSection from './components/sections/AcademicsSection'
 import CampusLifeSection from './components/sections/CampusLifeSection'
 import HeroSection from './components/sections/HeroSection'
+import SportsSection from './components/sections/SportsSection'
 
 function PlaceholderSection({ id, title, description, dark = false }) {
   return (
@@ -51,12 +52,7 @@ export default function App() {
 
         <CampusLifeSection />
 
-        <PlaceholderSection
-          id="sports"
-          title="Train with purpose. Compete with heart."
-          description="The next section will showcase the wide variety of sports available at Tulas International School."
-          dark
-        />
+        <SportsSection />
 
         <PlaceholderSection
           id="achievements"
