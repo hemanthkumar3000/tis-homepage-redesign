@@ -62,3 +62,13 @@ a:focus-visible {
 .font-body {
   font-family: var(--font-body);
 }
+@media (pointer: fine) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    cursor: none;
+  }
+}

@@ -1,72 +1,34 @@
 import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+import CustomCursor from './components/animation/CustomCursor'
+import ScrollProgress from './components/animation/ScrollProgress'
 import AboutSection from './components/sections/AboutSection'
 import AcademicsSection from './components/sections/AcademicsSection'
+import AchievementsSection from './components/sections/AchievementsSection'
+import AdmissionsSection from './components/sections/AdmissionsSection'
 import CampusLifeSection from './components/sections/CampusLifeSection'
 import HeroSection from './components/sections/HeroSection'
 import SportsSection from './components/sections/SportsSection'
 
-function PlaceholderSection({ id, title, description, dark = false }) {
-  return (
-    <section
-      id={id}
-      className={`px-5 py-24 lg:px-8 ${
-        dark ? 'bg-forest-dark text-cream' : 'bg-cream text-forest'
-      }`}
-    >
-      <div className="mx-auto max-w-7xl">
-        <p
-          className={`text-xs font-extrabold tracking-[0.16em] ${
-            dark ? 'text-gold' : 'text-clay'
-          }`}
-        >
-          TULAS INTERNATIONAL SCHOOL
-        </p>
-
-        <h2 className="font-display mt-4 max-w-2xl text-4xl sm:text-5xl">
-          {title}
-        </h2>
-
-        <p
-          className={`mt-5 max-w-xl text-base leading-7 ${
-            dark ? 'text-white/70' : 'text-ink/70'
-          }`}
-        >
-          {description}
-        </p>
-      </div>
-    </section>
-  )
-}
-
 export default function App() {
   return (
     <>
+      <ScrollProgress />
+      <CustomCursor />
+
       <Navbar />
 
       <main>
         <HeroSection />
-
         <AboutSection />
-
         <AcademicsSection />
-
         <CampusLifeSection />
-
         <SportsSection />
-
-        <PlaceholderSection
-          id="achievements"
-          title="Recognised for excellence."
-          description="The next section will present school rankings, awards, student accomplishments, and trust-building proof points."
-        />
-
-        <PlaceholderSection
-          id="admissions"
-          title="Your Tulas journey starts here."
-          description="The final section will become a conversion-focused admissions call-to-action with contact details and enquiry options."
-          dark
-        />
+        <AchievementsSection />
+        <AdmissionsSection />
       </main>
+
+      <Footer />
     </>
   )
 }

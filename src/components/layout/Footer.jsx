@@ -1,11 +1,4 @@
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  MapPin,
-  Phone,
-  Youtube,
-} from 'lucide-react'
+import { MapPin, Phone } from 'lucide-react'
 import { navigationItems } from '../../data/navigation'
 
 export default function Footer() {
@@ -44,7 +37,7 @@ export default function Footer() {
                 aria-label="Facebook"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-gold hover:text-gold"
               >
-                <Facebook size={18} aria-hidden="true" />
+                <span aria-hidden="true" className="text-sm font-bold">f</span>
               </a>
 
               <a
@@ -52,7 +45,7 @@ export default function Footer() {
                 aria-label="Instagram"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-gold hover:text-gold"
               >
-                <Instagram size={18} aria-hidden="true" />
+                <span aria-hidden="true" className="text-xs font-bold">ig</span>
               </a>
 
               <a
@@ -60,7 +53,7 @@ export default function Footer() {
                 aria-label="YouTube"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-gold hover:text-gold"
               >
-                <Youtube size={18} aria-hidden="true" />
+                <span aria-hidden="true" className="text-xs font-bold">yt</span>
               </a>
 
               <a
@@ -68,7 +61,7 @@ export default function Footer() {
                 aria-label="LinkedIn"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-gold hover:text-gold"
               >
-                <Linkedin size={18} aria-hidden="true" />
+                <span aria-hidden="true" className="text-xs font-bold">in</span>
               </a>
             </div>
           </div>
