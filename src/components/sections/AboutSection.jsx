@@ -3,7 +3,7 @@ import Reveal from '../animation/Reveal'
 import Button from '../ui/Button'
 
 const aboutImage =
-  'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1400&q=85'
+  '/images/about/about.jpg'
 
 const values = [
   'A balanced CBSE curriculum',

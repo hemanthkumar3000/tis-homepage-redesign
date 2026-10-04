@@ -11,9 +11,11 @@ const variants = {
 export default function Button({
   children,
   href,
+  type = 'button',
   variant = 'primary',
   className = '',
   showIcon = true,
+  onClick,
 }) {
   const baseStyles =
     'inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-extrabold tracking-wide transition duration-300 sm:px-6'
@@ -34,7 +36,11 @@ export default function Button({
   }
 
   return (
-    <button type="button" className={`${baseStyles} ${variants[variant]} ${className}`}>
+    <button
+      type={type}
+      onClick={onClick}
+      className={`${baseStyles} ${variants[variant]} ${className}`}
+    >
       {content}
     </button>
   )

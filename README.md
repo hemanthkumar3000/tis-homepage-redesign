@@ -1,16 +1,109 @@
-# React + Vite
+# Tulas International School — Homepage Redesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive, animated redesign of the Tulas International School homepage. The project retains TIS’s core educational positioning while presenting it through a premium, conversion-focused digital experience.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Live URL: Add your Vercel deployment URL here
+- Repository: Add your GitHub repository URL here
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18 with Vite
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- Vercel
 
-## Expanding the Oxlint configuration
+## Standout Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Scroll-triggered reveals using reusable Framer Motion animation components.
+- Animated scroll progress indicator using `useScroll` and `useSpring`.
+- Desktop-only custom cursor with hover-responsive scale states.
+- Responsive navigation with animated mobile menu.
+- Controlled enquiry form with validation and demo success feedback.
+- Mobile-first layouts tested across mobile, tablet, and desktop widths.
+- Semantic HTML, accessible labels, keyboard focus states, and reduced-motion support.
+
+## Local Setup
+
+Clone the repository:
+
+```bash
+git clone [https://github.com/your-username/tis-homepage-redesign.git](https://github.com/your-username/tis-homepage-redesign.git)
+cd tis-homepage-redesign
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal, usually:
+
+```txt
+http://localhost:5173
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```txt
+src/
+├── components/
+│   ├── animation/
+│   │   ├── CustomCursor.jsx
+│   │   ├── Reveal.jsx
+│   │   └── ScrollProgress.jsx
+│   ├── layout/
+│   │   ├── Footer.jsx
+│   │   └── Navbar.jsx
+│   ├── sections/
+│   │   ├── AboutSection.jsx
+│   │   ├── AcademicsSection.jsx
+│   │   ├── AchievementsSection.jsx
+│   │   ├── AdmissionsSection.jsx
+│   │   ├── CampusLifeSection.jsx
+│   │   ├── HeroSection.jsx
+│   │   └── SportsSection.jsx
+│   └── ui/
+│       ├── Button.jsx
+│       └── StatCard.jsx
+├── data/
+│   └── navigation.js
+├── App.jsx
+├── index.css
+└── main.jsx
+```
+
+## Architecture Notes
+
+- `components/ui/` contains reusable visual primitives.
+- `components/layout/` contains page-level navigation and footer elements.
+- `components/sections/` contains the major homepage content sections.
+- `components/animation/` contains reusable animation behaviour.
+- `data/` separates static content from component rendering logic.
+- The custom cursor is restricted to fine-pointer devices and does not appear on touch screens.
+- The `Reveal` component respects reduced-motion preferences.
+
+## Brand Note
+
+This is a frontend assessment project inspired by Tulas International School. Educational copy and brand context were adapted from the official TIS website. Replace temporary development images with properly licensed assets before final submission.

@@ -2,9 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowDown, Award, GraduationCap, Trophy } from 'lucide-react'
 import Button from '../ui/Button'
 
-const heroImage =
-  'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=2200&q=85'
-
+const heroImage ='images/hero/hero.jpg'
 const stats = [
   { value: '22', label: 'Acre green campus', icon: GraduationCap },
   { value: '16+', label: 'Olympic sports', icon: Trophy },

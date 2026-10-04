@@ -1,8 +1,46 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
+import { useState } from 'react'
 import Reveal from '../animation/Reveal'
 import Button from '../ui/Button'
 
+const initialFormData = {
+  parentName: '',
+  childGrade: '',
+  email: '',
+  phone: '',
+  message: '',
+}
+
 export default function AdmissionsSection() {
+  const [formData, setFormData] = useState(initialFormData)
+  const [status, setStatus] = useState('idle')
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+
+    setFormData((currentData) => ({
+      ...currentData,
+      [name]: value,
+    }))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    if (
+      !formData.parentName ||
+      !formData.childGrade ||
+      !formData.email ||
+      !formData.phone
+    ) {
+      setStatus('error')
+      return
+    }
+
+    setStatus('success')
+    setFormData(initialFormData)
+  }
+
   return (
     <section
       id="admissions"
@@ -125,8 +163,8 @@ export default function AdmissionsSection() {
                 Tell us about your child
               </h4>
 
-              <form className="mt-6 grid gap-4" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid gap-2 sm:grid-cols-2">
+              <form className="mt-6 grid gap-4" onSubmit={handleSubmit} noValidate>
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label
                       htmlFor="parent-name"
@@ -134,9 +172,13 @@ export default function AdmissionsSection() {
                     >
                       Parent / Guardian name
                     </label>
+
                     <input
                       id="parent-name"
+                      name="parentName"
                       type="text"
+                      value={formData.parentName}
+                      onChange={handleChange}
                       placeholder="Your full name"
                       className="mt-1 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-cream placeholder:text-white/40 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                     />
@@ -149,23 +191,31 @@ export default function AdmissionsSection() {
                     >
                       Current grade
                     </label>
+
                     <input
                       id="child-grade"
+                      name="childGrade"
                       type="text"
+                      value={formData.childGrade}
+                      onChange={handleChange}
                       placeholder="e.g. Class 7"
                       className="mt-1 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-cream placeholder:text-white/40 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                     />
                   </div>
                 </div>
 
-                <div className="grid gap-2 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label htmlFor="email" className="text-xs font-bold text-white/70">
                       Email
                     </label>
+
                     <input
                       id="email"
+                      name="email"
                       type="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="you@example.com"
                       className="mt-1 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-cream placeholder:text-white/40 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                     />
@@ -175,9 +225,13 @@ export default function AdmissionsSection() {
                     <label htmlFor="phone" className="text-xs font-bold text-white/70">
                       Phone
                     </label>
+
                     <input
                       id="phone"
+                      name="phone"
                       type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder="+91 XXXXXXXXXX"
                       className="mt-1 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-cream placeholder:text-white/40 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                     />
@@ -188,20 +242,36 @@ export default function AdmissionsSection() {
                   <label htmlFor="message" className="text-xs font-bold text-white/70">
                     Message (optional)
                   </label>
+
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="Tell us what you'd like to know..."
                     className="mt-1 w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-cream placeholder:text-white/40 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                   />
                 </div>
 
+                {status === 'error' && (
+                  <p className="rounded-xl border border-clay/50 bg-clay/15 px-4 py-3 text-sm text-white">
+                    Please fill in your name, child&apos;s grade, email, and phone number.
+                  </p>
+                )}
+
+                {status === 'success' && (
+                  <p className="rounded-xl border border-gold/50 bg-gold/15 px-4 py-3 text-sm text-white">
+                    Thank you. Your enquiry has been recorded in this demo experience.
+                  </p>
+                )}
+
                 <Button type="submit" className="mt-2 w-full">
                   Submit enquiry
                 </Button>
 
-                <p className="mt-3 text-center text-xs text-white/50">
-                  This is a demo form for the assessment.
+                <p className="mt-1 text-center text-xs text-white/50">
+                  Demo form only. No enquiry data is sent or stored.
                 </p>
               </form>
             </div>

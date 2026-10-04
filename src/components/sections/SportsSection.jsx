@@ -2,9 +2,7 @@ import { ArrowUpRight, Trophy } from 'lucide-react'
 import Reveal from '../animation/Reveal'
 import Button from '../ui/Button'
 
-const sportsImage =
-  'https://images.unsplash.com/photo-1517649763962-0c62306601c8?auto=format&fit=crop&w=1600&q=85'
-
+const sportsImage ='/images/sports/sports.jpg'
 const sports = [
   {
     name: 'Swimming',

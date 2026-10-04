@@ -29,8 +29,7 @@ const academics = [
 ]
 
 const academicImage =
-  'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85'
-
+'/images/academics/academics.jpg'
 export default function AcademicsSection() {
   return (
     <section
