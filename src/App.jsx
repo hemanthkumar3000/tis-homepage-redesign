@@ -1,5 +1,6 @@
 import Navbar from './components/layout/Navbar'
 import AboutSection from './components/sections/AboutSection'
+import AcademicsSection from './components/sections/AcademicsSection'
 import HeroSection from './components/sections/HeroSection'
 
 function PlaceholderSection({ id, title, description, dark = false }) {
@@ -37,12 +38,7 @@ export default function App() {
 
         <AboutSection />
 
-        <PlaceholderSection
-          id="academics"
-          title="Academics that turn curiosity into capability."
-          description="The next section will introduce the TIS academic experience, curriculum, teaching approach, and opportunities for students."
-          dark
-        />
+        <AcademicsSection />
 
         <PlaceholderSection
           id="campus-life"
