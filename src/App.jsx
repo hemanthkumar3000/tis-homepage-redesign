@@ -1,6 +1,7 @@
 import Navbar from './components/layout/Navbar'
 import AboutSection from './components/sections/AboutSection'
 import AcademicsSection from './components/sections/AcademicsSection'
+import CampusLifeSection from './components/sections/CampusLifeSection'
 import HeroSection from './components/sections/HeroSection'
 
 function PlaceholderSection({ id, title, description, dark = false }) {
@@ -12,7 +13,11 @@ function PlaceholderSection({ id, title, description, dark = false }) {
       }`}
     >
       <div className="mx-auto max-w-7xl">
-        <p className={`text-xs font-extrabold tracking-[0.16em] ${dark ? 'text-gold' : 'text-clay'}`}>
+        <p
+          className={`text-xs font-extrabold tracking-[0.16em] ${
+            dark ? 'text-gold' : 'text-clay'
+          }`}
+        >
           TULAS INTERNATIONAL SCHOOL
         </p>
 
@@ -20,7 +25,11 @@ function PlaceholderSection({ id, title, description, dark = false }) {
           {title}
         </h2>
 
-        <p className={`mt-5 max-w-xl text-base leading-7 ${dark ? 'text-white/70' : 'text-ink/70'}`}>
+        <p
+          className={`mt-5 max-w-xl text-base leading-7 ${
+            dark ? 'text-white/70' : 'text-ink/70'
+          }`}
+        >
           {description}
         </p>
       </div>
@@ -40,11 +49,7 @@ export default function App() {
 
         <AcademicsSection />
 
-        <PlaceholderSection
-          id="campus-life"
-          title="More than a campus. A place to belong."
-          description="The next section will present the campus experience, boarding life, wellbeing, facilities, and creative opportunities."
-        />
+        <CampusLifeSection />
 
         <PlaceholderSection
           id="sports"
