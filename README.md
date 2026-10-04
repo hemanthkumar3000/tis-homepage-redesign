@@ -4,9 +4,8 @@ A modern, responsive, animated redesign of the Tulas International School homepa
 
 ## Live Demo
 
-- Live URL: Add your Vercel deployment URL here
-- Repository: Add your GitHub repository URL here
-
+- Live URL: (https://tis-homepage-redesign-alpha.vercel.app/)
+- Repository: https://github.com/hemanthkumar3000/tis-homepage-redesign
 ## Tech Stack
 
 - React 18 with Vite
